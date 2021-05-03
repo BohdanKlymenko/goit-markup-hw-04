@@ -208,6 +208,10 @@ img {
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: var(--dark-bg);
+  background-image: url(../images/bg-hero/bg-hero.jpg);
+  background-size: contain;
+  background-position: cover;
+  background-repeat: no-repeat;
 }
 
 .page-title {
@@ -237,10 +241,13 @@ img {
   overflow: hidden;
 }
 
+.noname-section {
+  padding-bottom: 0;
+}
+
 .noname-list {
   display: flex;
   margin-left: -30px;
-  padding-top: 94px;
 }
 
 .noname-item {
@@ -294,6 +301,7 @@ img {
   margin-top: 30px;
   flex-basis: calc((100% - 4 * 30px) / 4);
   text-align: center;
+  box-shadow: ;
 }
 
 .team-item-text {

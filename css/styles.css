@@ -6,6 +6,7 @@
   --alt-text-color: #ffffff;
   --logo-color: #000000;
   --icons-color: #afb1b8;
+  --alt-icon-color: #ffffff;
 
   --dark-bg: #2f303a;
   --second-bg: #f5f4fa;
@@ -99,6 +100,14 @@ img {
   padding-left: 0;
 }
 
+/* .line:hover::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 40px;
+  background-color: currentColor;
+} */
+
 .logo {
   font-family: var(--logo-font);
   font-weight: bold;
@@ -151,7 +160,7 @@ img {
   padding-bottom: 32px;
 }
 
-.contacts {
+.contacts-list {
   display: flex;
   font-weight: 500;
   font-size: 14px;
@@ -164,6 +173,15 @@ img {
   margin-right: 50px;
 }
 
+.contacts-link {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-icon {
+  margin-right: 10px;
+  stroke: currentColor;
+}
 /* hero section  */
 
 .btn {
@@ -180,6 +198,13 @@ img {
   background-color: var(--second-bg);
   color: var(--title-color);
   cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0px 2px 2px 0px #0000001f;
+  box-shadow: 0px 1px 2px 0px #00000014;
+  box-shadow: 0px 3px 1px 0px #0000001a;
 }
 
 .btn-hero {
@@ -216,7 +241,11 @@ img {
   height: 100vh;
   min-height: 600px;
   background-color: var(--dark-bg);
-  background-image: url(../images/bg-hero/bg-hero.jpg);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/bg-hero/bg-hero.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +266,7 @@ img {
   color: var(--alt-title-color);
 }
 
-/*  no name section */
+/*  advantages section */
 
 .visually-hidden {
   position: absolute !important;
@@ -250,16 +279,16 @@ img {
   overflow: hidden;
 }
 
-.noname-section {
+.advantages-section {
   padding-bottom: 0;
 }
 
-.noname-list {
+.advantages-list {
   display: flex;
   margin-left: -30px;
 }
 
-.noname-item {
+.advantages-item {
   margin-left: 30px;
   flex-basis: calc((100% - 4 * 30px) / 4);
 }
@@ -270,6 +299,17 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+.advantages-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
+  background: var(--second-bg);
+  border-radius: 4px;
 }
 
 /* gallery section */
@@ -331,6 +371,39 @@ img {
 .team-item-position {
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 16px;
+}
+
+.social-icons {
+  display: inline-flex;
+}
+
+.social-icons-svg {
+  fill: var(--icons-color);
+}
+
+.social-icons-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.social-icons-link:hover .social-icons-svg,
+.social-icons-link:focus .social-icons-svg {
+  fill: var(--alt-text-color);
+}
+
+.social-icons-link:hover,
+.social-icons-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-icons-item:not(:last-child) {
+  margin-right: 10px;
 }
 
 /* card-set portfolio */
@@ -358,13 +431,13 @@ img {
   flex-basis: calc((100% - 3 * 30px) / 3);
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-link:hover,
+.portfolio-link:focus {
+  display: block;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
 }
 
 .projects-title {
@@ -402,8 +475,6 @@ img {
 }
 
 .client-icons-svg {
-  width: 106px;
-  height: 60px;
   fill: var(--icons-color);
 }
 
@@ -431,8 +502,16 @@ img {
   background-color: var(--dark-bg);
 }
 
-.address {
+.footer-section {
+  display: flex;
+  align-items: baseline;
+}
+
+.address-section {
   max-width: 270px;
+  margin-right: 70px;
+}
+.address {
   margin-top: 20px;
   font-size: 14px;
   font-style: normal;
@@ -440,8 +519,7 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.address-mailto {
-  margin-top: 9px;
+.address-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -450,4 +528,24 @@ img {
   font-size: 14px;
   line-height: 1.71;
   color: var(--alt-text-color);
+}
+
+.social-icons-section {
+  max-width: 208px;
+}
+
+.social-icon-title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--alt-title-color);
+}
+
+.svg-footer {
+  fill: var(--alt-icon-color);
+}
+.social-icons-link-footer {
+  background-color: rgba(255, 255, 255, 0.1);
 }
